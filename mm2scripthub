@@ -65,7 +65,7 @@ screenGui:Destroy()
 -- SECOND SCRIPT
 
 local success2, err2 = pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Azura83/Murder-Mystery-2/refs/heads/main/Script.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Waguriiiii/Murder-mystery-2/refs/heads/main/Waguri.lua"))()
 end)
 
 if not success2 then
